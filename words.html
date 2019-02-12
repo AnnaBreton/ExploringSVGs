@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    #curve-text {
+        font: 15px sans-serif;
+    }
+
+    #curve-line {
+        stroke: #999;
+        fill: none;
+    }
+
+</style>
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", 960)
+        .attr("height", 500)
+        .attr("viewBox", "0 0 1000 300");
+
+    svg.append("defs").append("path")
+        .attr("id", "curve")
+        .attr("d", "M287,293l0,-4l0,-4l0,-6l0,-4l0,-6l-1,-6l-1,-5l-1,-8l-2,-4l-2,-3l-1,-3l-2,-3l-3,-6l-3,-4l-2,-2l-2,-2l-1,-3l-2,-2l-1,-2l-2,-1l-1,-2l-2,-2l-3,-2l-4," +
+            "-1l-5,-1l-6,-3l-3,-1l-4,0l-7,0l-11,0l-6,0l-2,0l-1,2l-3,2l-3,2l-5,3l-9,6l-5,3l-3,2l-3,5l-3,5l-3,6l-5,7l-5,7l-4,8l-6,10l-2,4l-1,4l-3,7l0,5l-2,8l-1,5l-1,5l0,1l0," +
+            "8l0,7l0,8l0,2l0,6l0,5l0,7l1,4l1,4l2,4l0,3l2,3l2,3l2,1l5,3l4,2l3,1l2,2l4,0l2,0l6,0l4,0l2,0l4,-1l4,-2l2,-1l1,-1l3,-2l4,-3l4,-2l7,-4l3,-2l4,-2l4,-5l2,-4l4,-3l2,-2l3," +
+            "-3l3,-2l2,-1l5,-4l3,-3l3,-5l3,-5l1,-1l0,-1l0,-1l1,-2l1,-1l1,-1l2,-2l1,-1l1,-1l0,4l-2,6l-3,9l-3,9l-1,4l-1,1l0,3l-1,3l-1,5l-1,1l0,1l0,1l-1,3l0,2l0,1l0,1l0,1l0,1l0,1l1," +
+            "0l1,0l1,0l2,0l3,-1l4,0l2,-1l2,-1l4,-2l2,0l2,-1l1,-1l1,-2l1,-1l2,-3l3,-3l0,-3l2,-2l2,-3l2,-3l4,-2l3,-2l1,-2l2,-1l2,-3l4,-4l1,-3l2,-4l1,-1l0,-2l2,-2l2,-4l3," +
+            "-2l5,-3l3,-3l4,-2l5,-4l2,0l1,0l1,0l2,2l0,1l1,1l1,3l0,2l0,3l0,7l0,4l0,5l-1,5l-1,3l0,5l0,2l-1,3l-1,4l0,4l0,4l0,3l0,3l0,1l0,1l0,-6l3,-11l5,-9l7,-12l5,-7l3," +
+            "-3l3,-4l2,-4l3,-4l1,-3l1,-1l1,-1l2,-1l1,-1l1,0l1,0l1,0l2,1l4,2l3,4l2,3l3,8l0,3l1,6l0,3l0,3l0,4l0,4l0,1l0,1l1,2l1,3l1,2l0,3l1,1l1,1l1,1l1,1l0,1l2,0l6,1l6," +
+            "0l8,0l2,0l2,-2l1,0l2,-2l5,-6l4,-4l3,-4l3,-4l1,-1l1,-1l2,-4l2,-2l2,-4l1,-5l1,-3l1,-2l1,-2l1,-2l1,-1l0,-1l1,0l1,-2l1,0l1,0l1,0l2,0l3,2l2,3l2,4l0,2l1,4l1,3l0," +
+            "2l1,4l1,4l0,4l0,4l1,4l0,2l0,2l0,1l0,1l0,-2l1,-4l2,-6l1,-4l1,-3l2,-5l2,-6l3,-4l1,-3l2,-2l2,-1l1,-2l2,-1l3,-1l2,-2l2,-2l8,-1l2,0l2,0l2,1l3,2l2,2l3,3l2,3l2,3l2," +
+            "4l1,2l1,3l2,1l3,3l2,2l3,2l2,1l4,0l3,0l3,0l2,0l2,0l3,-2l3,-1l3,-3l5,-3l4,-2l5,-4l2,-2l3,-3l4,-3l3,-2l5,-4l8,-4l4,-1l6,-3l5,0l7,-2l6,0l4,0l4,2l4,3l3,3l1,2l2,2l0,1l0," +
+            "1l0,-1l-1,0l-1,-1l-2,0l-1,0l-2,0l-2,0l-4,0l-2,0l-2,0l-1,0l-2,0l-1,0l-1,0l-2,1l-1,1l-2,0l-1,2l-2,0l-3,2l-2,3l-4,4l-3,3l-1,2l-3,5l-2,5l0,4l0,6l0,2l0,4l0,4l0,2l0,2l4,4l4,3l3,3l4,1l4,2l3,0l6,-1l7,-2l6," +
+            "0l4,-2l1,-1l2,-1l2,-2l2,-2l1,-2l1,-2l2,-2l0,-1l0,-1l1,1l3,4l6,5l4,1l4,2l6,1l7,2l14,0l4,0l21,0l4,0l12,0l7,-2l5,-1l8,-3l4,-2l3,0l2,-1l3,-1l2,0l3,0l1,0");
+
+
+
+
+
+
+    svg.append("text")
+        .attr("id", "curve-text")
+        .append("textPath")
+        .attr("xlink:href", "#curve")
+        .text("Hi, I'm Anna. Here is a cool svg text edit example using HTML and D3.js!!! I created an SVG" +
+            " image of my name, saved it and then appended this text to that SVG element via D3. It's actually pretty easy" +
+            "once you get the hang of it...");
+
+    svg.append("use")
+        .attr("id", "curve-line")
+        .attr("xlink:href", "#curve");
+
+</script>
+<h1> Append this tect to my signature:</h1>
+<p> Hi, I'm Anna. Here is a cool svg text edit example using HTML and D3.js!!! I created an SVG
+    image of my name, saved it and then appended this text to that SVG element via D3. It's actually pretty easy
+    once you get the hang of it...
+</p>
